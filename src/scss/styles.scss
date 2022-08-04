@@ -1,11 +1,16 @@
-@import "_buttons.scss";
+@import "_mixins.scss";
 
-a {
-  @extend %button;
-  text-decoration: none;
-}
-
-button {
-  @extend %button;
-  border: none;
+h1 {
+  color: red;
+  @include responsive("iPhone") {
+    color: yellow;
+  }
+  @include responsive("iPhone-landscape") {
+    font-size: 22px;
+    color: skyblue;
+  }
+  @include responsive("iPad-landscape") {
+    font-size: 30px;
+    color: rgb(0, 65, 91);
+  }
 }

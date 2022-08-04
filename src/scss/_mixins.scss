@@ -1,9 +1,24 @@
-@mixin coolTitle($word) {
-  color: mintcream;
-  font-size: 30px;
-  @if $word == "first" {
-    color: pink;
-  } @else {
-    color: yellow;
+$miniPhone: 500px;
+$maxiPhone: 690px;
+$miniPad: $miniPhone + 1;
+$maxiPad: 1120px;
+
+@mixin responsive($device) {
+  @if $device == "iPhone" {
+    @media screen and (min-width: $miniPhone) and (max-width: maxiPhone) {
+      @content;
+    }
+  } @else if $device == "iPhone-landscape" {
+    @media screen and (min-width: $miniPhone) and (max-width: maxiPhone) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $device == "iPad" {
+    @media screen and (min-width: $miniPad) and (max-width: $maxiPad) {
+      @content;
+    }
+  } @else if $device == "iPad-landscape" {
+    @media screen and (min-width: $miniPad) and (max-width: $maxiPad) and (orientation: landscape) {
+      @content;
+    }
   }
 }
