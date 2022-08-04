@@ -1,0 +1,9 @@
+@mixin coolTitle($word) {
+  color: mintcream;
+  font-size: 30px;
+  @if $word == "first" {
+    color: pink;
+  } @else {
+    color: yellow;
+  }
+}

@@ -1,6 +1,32 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
 body {
-  background: peru;
-  a {
-    color: blue;
+  background: $bg;
+  color: white;
+}
+
+h1 {
+  &:first-child {
+    @include coolTitle("first");
+  }
+  &:nth-child(2) {
+    @include coolTitle("second");
+  }
+}
+
+.box {
+  margin-top: 20px;
+  &:hover {
+    background-color: aquamarine;
+  }
+  h2 {
+    color: orangered;
+    &:hover {
+      color: green;
+    }
+  }
+  button {
+    color: skyblue;
   }
 }
